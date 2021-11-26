@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 
@@ -14,13 +13,6 @@ require("dotenv").config();
 let PORT = process.env.PORT
 let URL = 'http://localhost'
 let APP_STATUS = 'Production server'
-
-app.all('/*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-  });
-
 
 app.get('/', (req, res) => {
     res.send('Hi, this is Rest-API with Node.js');

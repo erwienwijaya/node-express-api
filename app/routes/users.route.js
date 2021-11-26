@@ -2,12 +2,24 @@ module.exports = (app) => {
     const express = require('express');
     const users = require('../controllers/users.controller')
     const router = express.Router();
+    const cors = require('cors');
 
-    router.get('/', users.getUser);
-    router.post('/', users.createUser);
-    router.get('/:id', users.getUserId);
-    router.put('/:id', users.updateUser);
-    router.delete('/:id', users.deleteUser);
+    //call .env config
+    require("dotenv").config();
+
+    //call config through .env
+    let PORT = process.env.PORT
+    
+    var corsOptions = {
+        origin: `http://localhost:${PORT}`,
+        optionsSuccessStatus: 200
+    }
+
+    router.get('/',cors(corsOptions), users.getUser);
+    router.post('/',cors(corsOptions), users.createUser);
+    router.get('/:id',cors(corsOptions), users.getUserId);
+    router.put('/:id',cors(corsOptions), users.updateUser);
+    router.delete('/:id',cors(corsOptions), users.deleteUser);
 
     app.use('/api/users', router);
 }
