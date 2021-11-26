@@ -11,7 +11,7 @@ require("dotenv").config();
 
 //call config through .env
 let PORT = process.env.PORT
-let URL = 'http://localhost'
+let URL = 'https://my-node-express-api.herokuapp.com'
 let APP_STATUS = 'Production server'
 
 app.get('/', (req, res) => {
@@ -37,7 +37,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-            url: `${URL}:${PORT}/api/`,
+            url: `${URL}/api/`,
             description: `${APP_STATUS}`,
             },
         ],
