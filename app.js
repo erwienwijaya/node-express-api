@@ -15,17 +15,12 @@ let PORT = process.env.PORT
 let URL = 'http://localhost'
 let APP_STATUS = 'Production server'
 
-app.use(cors());
-
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-
+app.all('/*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
-}
+  });
 
-app.use(allowCrossDomain);
 
 app.get('/', (req, res) => {
     res.send('Hi, this is Rest-API with Node.js');
