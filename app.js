@@ -11,7 +11,7 @@ app.use(express.json());
 require("dotenv").config();
 
 //call config through .env
-let PORT = process.env.APP_PORT
+let PORT = process.env.PORT || process.env.APP_PORT
 let URL = process.env.APP_URL
 let APP_STATUS = process.env.APP_DEBUG === 'true' ? 'Development server' : 'Production server'
 
