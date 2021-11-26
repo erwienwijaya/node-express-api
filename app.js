@@ -11,8 +11,8 @@ require("dotenv").config();
 
 //call config through .env
 let PORT = process.env.PORT
-let URL = 'https://my-node-express-api.herokuapp.com'
-let APP_STATUS = 'Production server'
+let APP_URI = process.env.APP_DEBUG === 'true' ? `${process.env.APP_URI}:${PORT}` : process.env.APP_URI
+let APP_STATUS = process.env.APP_DEBUG === 'true' ? 'Development server' : 'Production server'
 
 app.get('/', (req, res) => {
     res.send('Hi, this is Rest-API with Node.js');
@@ -37,7 +37,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-            url: `${URL}/api/`,
+            url: `${APP_URI}/api/`,
             description: `${APP_STATUS}`,
             },
         ],
@@ -50,7 +50,7 @@ app.use('/api/docs',swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 
 app.listen(PORT, () => {
-    console.log(`Server is running on ${URL}:${PORT}`)
+    console.log(`Server is running on ${APP_URI}`)
 });
 
 module.exports = app;
