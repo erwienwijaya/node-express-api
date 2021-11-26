@@ -6,7 +6,7 @@ const swaggerUI = require('swagger-ui-express');
 const app = express();
 
 app.use(cors({
-    origin: 'https://my-node-express-api.herokuapp.com/'
+    origin: 'http://localhost:17977'
 }));
 
 app.use(express.json());
