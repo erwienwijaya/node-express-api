@@ -5,10 +5,6 @@ const swaggerUI = require('swagger-ui-express');
 
 const app = express();
 
-app.use(cors({
-    origin: `http://localhost:${PORT}`
-}));
-
 app.use(express.json());
 
 //call .env config
@@ -18,6 +14,10 @@ require("dotenv").config();
 let PORT = process.env.PORT
 let URL = 'http://localhost'
 let APP_STATUS = 'Production server'
+
+app.use(cors({
+    origin: `http://localhost:${PORT}`
+}));
 
 app.get('/', (req, res) => {
     res.send('Hi, this is Rest-API with Node.js');
