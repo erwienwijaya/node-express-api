@@ -8,7 +8,7 @@ Requirement Development:
 - Clone this repository `git clone https://github.com/erwienwijaya/node-express-api.git`
 - Copy or duplicate file `.env.example` and then rename `.env`
 - Config inside file `.env` (optional) 
-- Config file `.env` set APP_DEBUG = true (for Development and Test) or APP_DEBUG = true (for Production)
+- Config file `.env` set APP_DEBUG = true (for Development and Test) or APP_DEBUG = false (for Production)
 - Install requirements dependencies: `npm install`
 - Run node server: `npm start`
 - Access the project at: `http://localhost:3000`
