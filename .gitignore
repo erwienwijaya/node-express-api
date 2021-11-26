@@ -21,6 +21,7 @@ node_modules/
 .eslintcache
 
 # dotenv environment variables file
+.env
 .env.test
 
 # Gatsby files
