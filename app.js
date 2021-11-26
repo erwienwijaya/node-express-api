@@ -12,8 +12,7 @@ require("dotenv").config();
 
 //call config through .env
 let PORT = process.env.PORT
-let URL = process.env.APP_URL
-// let APP_STATUS = process.env.APP_DEBUG === 'true' ? 'Development server' : 'Production server'
+let URL = 'http://localhost'
 let APP_STATUS = 'Production server'
 
 app.get('/', (req, res) => {
