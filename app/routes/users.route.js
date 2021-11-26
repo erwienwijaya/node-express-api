@@ -9,9 +9,9 @@ module.exports = (app) => {
 
     //call config through .env
     let PORT = process.env.PORT
-    
+
     var corsOptions = {
-        origin: `http://localhost:${PORT}`,
+        origin: 'https://my-node-express-api.herokuapp.com',
         optionsSuccessStatus: 200
     }
 
