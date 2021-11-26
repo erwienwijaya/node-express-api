@@ -6,7 +6,7 @@ const swaggerUI = require('swagger-ui-express');
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:17977'
+    origin: `http://localhost:${PORT}`
 }));
 
 app.use(express.json());
