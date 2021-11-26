@@ -10,7 +10,7 @@ Requirement Development:
 - Config inside file `.env` (optional) 
 - Config file `.env` set APP_DEBUG = true (for Development and Test) or APP_DEBUG = false (for Production)
 - Install requirements dependencies: `npm install`
-- Run node server: `npm start`
+- Run node server: `npm run dev`
 - Access the project at: `http://localhost:3000`
 
 ## Testing
