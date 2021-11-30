@@ -26,3 +26,7 @@ node_modules/
 
 # Gatsby files
 .cache/
+
+# IDE
+/.idea
+/.vscode
